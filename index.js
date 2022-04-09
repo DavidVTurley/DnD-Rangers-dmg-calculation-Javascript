@@ -32,6 +32,14 @@ Stats[5].value = 8;
 
 
 ///////////////////////// General /////////////////////////
+function GetStat(statabbreviation) {
+    return Stats.find(x => x.id == statabbreviation).value;
+};
+
+function GetMod(statabbreviation){
+    const stat = (GetStat(statabbreviation) - 10) / 2;
+    return Math.floor(stat);
+}
 
 function CreateInputElement(text, id, inputClass, inputType, elementToAppendTo){
     const fragment = document.createDocumentFragment();
