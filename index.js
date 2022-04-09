@@ -12,17 +12,19 @@ CreateNewCheckboxElement("Rangers Focus", "rangersFocus", checkboxDiv);
 
 
 function CreateNewCheckboxElement(text, id, elementToAppendTo){
+    const fragment = document.createDocumentFragment();
+    const label = document.createElement("label");
+    const labelText = document.createTextNode(text);
+    label.setAttribute("for", id);
+    const input = document.createElement('input');
+    input.setAttribute('type', 'checkbox');
+    input.name = id;
+    input.id = id;
 
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.className = "checkboxes";
-    checkbox.id = id;
-    elementToAppendTo.appendChild(checkbox);
+    label.appendChild(input);
+    label.appendChild(labelText);
+    fragment.appendChild(label);
 
-
-    let label = document.createElement("label");
-    label.textContent = text;
-    elementToAppendTo.appendChild(label);
-
+    elementToAppendTo.appendChild(fragment);
     elementToAppendTo.appendChild(document.createElement("br"));
 }
