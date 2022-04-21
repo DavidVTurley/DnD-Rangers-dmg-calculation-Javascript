@@ -2,6 +2,12 @@
     display: flex;
     justify-content: start;
 }
+
+.row{
+    display: flex;
+    justify-content: start;
+}
+
 .statNumInput{
     width: 40px;
 }
